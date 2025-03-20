@@ -16,6 +16,25 @@
   --transition: all .2s ease-in-out;
 }
 
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      margin: 0px;
+  }
+  50% {
+      transform: scale(1.1);
+      margin: 2.5px;
+  }
+  75% {
+      transform: scale(1);
+      margin: 3px;
+  }
+  100%{
+    margin: 0px;
+  }
+}
+
 /* main */
 
 * {
@@ -118,8 +137,7 @@ button {
   padding: 20px 1px 0 1px;
   margin-right: 2px;
   border-radius: 5px;
-  -webkit-animation-duration: .5s;
-  animation-duration: .5s;
+  animation: pulse 1s;
 }
 
 
@@ -130,6 +148,14 @@ button {
   justify-content: center;
 }
 
+#qwerty button:hover:not(button.chosen, button.wrong){
+  background-color:#c2cce3;
+}
+
+
+#qwerty button:active:not(button.chosen, button.wrong){
+  transform: scale(.95);
+}
 
 .chosen {
   background: #3a3f58;
